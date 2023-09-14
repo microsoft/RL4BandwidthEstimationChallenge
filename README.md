@@ -13,7 +13,6 @@ Offline reinforcement learning (RL) is a variant of RL where the agent learns fr
 
 In this challenge, participants are provided with a dataset of real-world packet traces for Microsoft Teams audio/video calls. Each packet trace corresponds to the sequence of packet headers received by the client in one audio/video call. In addition, objective signals which capture the user-perceived audio/video quality during the call are provided. This dataset is based on traces from real calls with different behaviour policies, including traditional and ML (machine learning) policies. The task of the challenge is to train a policy model (receiver side bandwidth estimator) which maps states (observed network statistics) to actions (bandwidth estimates) to improve QoE for users. To this end, participants are free to define the state-action spaces and reward functions, and process that data into a sequence of (states, actions, rewards) amenable for use with offline RL techniques, such as imitation learning, conservative Q-learning, inverse reinforcement learning, and constrained policy optimization. 
 
-
 ## Important Dates 
 
 * Challenge announcement & website launch: September 30th, 2023 
@@ -31,18 +30,6 @@ In this challenge, participants are provided with a dataset of real-world packet
 Sami Khairy, Gabriel Mittag, Ezra Ameri, Scott Inglis, Vishak Gopal, Mehrsa Golestaneh, Ross Cutler (Microsoft Corporation) 
 
 Francis Yan, Zhixiong Niu (Microsoft Research) 
-
-## Project
-
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
-
-As the maintainer of this project, please make a few updates:
-
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
 
 ## Contributing
 
