@@ -6,8 +6,8 @@ BLOB_NAMES=(
     testbed_dataset/testbed_dataset_chunk_0.zip
     testbed_dataset/testbed_dataset_chunk_1.zip
     testbed_dataset/testbed_dataset_chunk_2.zip
-    testbed_dataset/testbed_dataset_chunk_1.zip
-    testbed_dataset/testbed_dataset_chunk_2.zip
+    testbed_dataset/testbed_dataset_chunk_3.zip
+    testbed_dataset/testbed_dataset_chunk_4.zip
 )
 
 ###############################################################
