@@ -21,6 +21,38 @@ In this challenge, participants are provided with a dataset of real-world trajec
 
 The goal of the challenge is to improve QoE for RTC system users as measured by objective audio/video quality scores by developing a deep learning-based policy model (receiver-side bandwidth estimator, π) with offline RL techniques, such as conservative Q-learning, inverse reinforcement learning, and constrained policy optimization, to name a few. To this end, participants are free to specify an appropriate reward function based on the provided dataset of observed network dynamics and objective metrics, the model architecture, and the training algorithm, given that the developed model adheres to the below requirements.
 
+## Challenge Requirements
+
+1. The policy model ($\pi$) can be a state-less or a stateful model that outputs the bandwidth estimate ($b_n$) in bits per second (bps). The input to a stateless model is the observation vector ($o_n$), hence, $\pi_\text{stateless}: o_n \rightarrow b_n$. On the other hand, the inputs to a stateful model are the observation vector ($o_n$), as well as hidden ($h_{n-1}$) and cell ($c_{n-1}$)  states which are representations learned by the model to capture the underlying structure and temporal dependencies in the sequence of observation vectors, hence, $\pi_\text{stateful}: o_n, h_{n-1}, c_{n-1} \rightarrow b_n$. Please refer to the [model class](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-emulated-dataset.sh) in the repository which shows the required inputs and outputs.
+
+2. Feature transformation and/or feature selection should be performed in a processing block within the model. For instance, the first layer ($l_0$) of the model can map the observation vector ($o_n$) to a desired agent state ($s_n$), $l_0: o_n → s_n$.
+
+3. Participants can specify an appropriate action space, e.g. $a_n \in [0,1]$, however, the transformation from the action space to the bps space should be performed by the last layer ($l_N$) of the model such that the model predicts the bandwidth estimates in bps, $l_N: a_n \rightarrow b_n$.
+
+4. Participants can specify an appropriate reward function for training the RL agent based on the provided signals: audio quality signal, video quality signal, and network metrics in the observation vector.
+
+5. To reduce the hardware requirements when the policy model is used for inference at the client side of the video conferencing system, the model size must be smaller than 10 MB and inference latency should be no more than 5ms on an Intel Core i5 Quadcore clocked at 2.4 GHz using a single thread. 
+
+6. Participants can train the model using PyTorch or TensorFlow, and the model should be exported to ONNX. To ensure that organizers can run the model correctly, participants are required to share a small subset of their validation data along with their model outputs to be used for verification. We provide sample scripts to convert PyTorch and TF models in the repository.
+
+7. Participants should submit their training code to the Open-source Software and Datasets track of the conference to receive a reproducibility badge.
+
+## Dataset Description
+
+Please refer to the [dataset description](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/data/) on the challenge website.
+
+## In this Repository
+
+This repository contains scripts required for 2nd Bandwidth Estimation Challenge at ACM MMSys 2024. 
+
+1. [Script to download the Testbed dataset](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-testbed-dataset.sh)
+
+2. [Script to download the Emulated dataset](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-emulated-dataset.sh)
+
+3. [Bandwidth estimator model class in Tensorflow and converison to onnx](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-emulated-dataset.sh)
+
+4. [Code prerequisites](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/requirements.txt)
+
 ## Important Dates 
 
 * Challenge announcement & website launch: October 9th, 2023 
@@ -33,11 +65,7 @@ The goal of the challenge is to improve QoE for RTC system users as measured by 
 
 * Camera ready paper due: March 1st, 2024 
 
-## Organizers
-
-Sami Khairy, Gabriel Mittag, Ezra Ameri, Scott Inglis, Vishak Gopal, Mehrsa Golestaneh, Ross Cutler (Microsoft Corporation) 
-
-Francis Yan, Zhixiong Niu (Microsoft Research) 
+## Citation
 
 ## Contributing
 
@@ -53,10 +81,53 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## Trademarks
+# Legal Notices
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+Microsoft and any contributors grant you a license to the Microsoft documentation and other content
+in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
+see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the
+[LICENSE-CODE](LICENSE-CODE) file.
+
+Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services referenced in the
+documentation may be either trademarks or registered trademarks of Microsoft in the United States
+and/or other countries. The licenses for this project do not grant you rights to use any Microsoft
+names, logos, or trademarks. Microsoft's general trademark guidelines can be found at
+http://go.microsoft.com/fwlink/?LinkID=254653.
+
+Privacy information can be found at https://privacy.microsoft.com/en-us/
+
+Microsoft and any contributors reserve all other rights, whether under their respective copyrights, patents,
+or trademarks, whether by implication, estoppel or otherwise.
+
+## Dataset licenses
+
+MICROSOFT PROVIDES THE DATASETS ON AN "AS IS" BASIS. MICROSOFT MAKES NO WARRANTIES, EXPRESS OR IMPLIED, GUARANTEES OR CONDITIONS WITH RESPECT TO YOUR USE OF THE DATASETS. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAW, MICROSOFT DISCLAIMS ALL LIABILITY FOR ANY DAMAGES OR LOSSES, INLCUDING DIRECT, CONSEQUENTIAL, SPECIAL, INDIRECT, INCIDENTAL OR PUNITIVE, RESULTING FROM YOUR USE OF THE DATASETS.
+
+## Code license
+MIT License
+
+Copyright (c) Microsoft Corporation.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE
+
+## Organizers
+
+Sami Khairy, Gabriel Mittag, Ezra Ameri, Scott Inglis, Vishak Gopal, Mehrsa Golestaneh, Ross Cutler (Microsoft Corporation) 
+
+Francis Yan, Zhixiong Niu (Microsoft Research) 
