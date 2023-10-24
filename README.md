@@ -49,7 +49,7 @@ This repository contains scripts required for 2nd Bandwidth Estimation Challenge
 
 2. [Script to download the Emulated dataset](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-emulated-dataset.sh)
 
-3. [Bandwidth estimator model class in Tensorflow and converison to onnx](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-emulated-dataset.sh)
+3. [Bandwidth estimator model class in Tensorflow and converison to onnx](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/tf_policy.py)
 
 4. [Code prerequisites](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/requirements.txt)
 
