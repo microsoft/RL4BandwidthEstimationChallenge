@@ -51,7 +51,9 @@ This repository contains scripts required for 2nd Bandwidth Estimation Challenge
 
 3. [Bandwidth estimator model class in Tensorflow and converison to onnx](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/tf_policy.py)
 
-4. [Code prerequisites](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/requirements.txt)
+4. [Bandwidth estimator model class in PyTorch and converison to onnx](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/torch_policy.py)
+
+5. [Code prerequisites](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/requirements.txt)
 
 ## Important Dates 
 
