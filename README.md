@@ -3,7 +3,7 @@
 
 ## Challenge Website
 
-The complete details about the challenge and participation rules can be found on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/).
+The complete details about the challenge and participation rules can be found on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/). To register for the challenge, please fill out this [form](https://forms.office.com/r/LE5PR9EL5q).
 
 ## Grand Challenge Description
 
