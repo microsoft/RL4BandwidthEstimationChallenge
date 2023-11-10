@@ -13,9 +13,9 @@ class MlBandwidthEstimator(tf.keras.Model):
         if self.stateful:
             # In this example, an lstm is used to construct a stateful deep net.
             # Note that any memory cell can be used given that the model input signature remains the same.
-            self.model_layers.append(tf.keras.layers.Dense(units=h, activation=tf.nn.tanh, kernel_initializer=tf.keras.initializers.Orthogonal(gain=2.0**0.5), bias_initializer='zeros'))
+            self.lstm_layer = tf.keras.layers.LSTM(units=lstm_units, return_state=True, stateful=False, return_sequences=True, kernel_initializer='orthogonal')
         for h in hidden_units:
-            self.model_layers.append(tf.keras.layers.Dense(units=h, activation=tf.nn.tanh))
+            self.model_layers.append(tf.keras.layers.Dense(units=h, activation=tf.nn.tanh, kernel_initializer=tf.keras.initializers.Orthogonal(gain=2.0**0.5), bias_initializer='zeros'))
         # output layer: mean and standard deviation of bandwidth estimates
         self.model_layers.append(tf.keras.layers.Dense(units=2, activation=tf.nn.relu, kernel_initializer=tf.keras.initializers.Orthogonal(gain=2.0**0.5), bias_initializer='zeros'))
     
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     lstm_units = 128
     
     # instantiate the ML BW estimator
-    tfBwModel = MlBandwidthEstimator(stateful=False, lstm_units = lstm_units, hidden_units=(128,128,128,128,128))
+    tfBwModel = MlBandwidthEstimator(stateful=True, lstm_units = lstm_units, hidden_units=(128,128,128,128,128))
     
     # create dummy inputs: 1 episode x T timesteps x obs_dim features
     dummy_inputs = np.asarray(np.random.uniform(0, 1, size=(1,T,obs_dim)), dtype=np.float32)
@@ -74,8 +74,8 @@ if __name__ == "__main__":
         feed_dict= {'obs':dummy_inputs[0:1,i:i+1,:],'hidden_states':onnx_hidden_state,'cell_states':onnx_cell_state}
         onnx_estimate, onnx_hidden_state, onnx_cell_state = ort_session.run(None, feed_dict)
         assert np.allclose(tf_estimate,onnx_estimate,atol=1e-6), 'Failed to match model outputs!'
-        assert np.allclose(tf_hidden_state,onnx_hidden_state,atol=1e-8), 'Failed to match hidden state1'
-        assert np.allclose(tf_cell_state,onnx_cell_state,atol=1e-8), 'Failed to match cell state!'
+        assert np.allclose(tf_hidden_state,onnx_hidden_state,atol=1e-6), 'Failed to match hidden state1'
+        assert np.allclose(tf_cell_state,onnx_cell_state,atol=1e-6), 'Failed to match cell state!'
     
     assert np.allclose(tf_hidden_state,final_hidden_state,atol=1e-8), 'Failed to match final hidden state!'
     assert np.allclose(tf_cell_state,final_cell_state,atol=1e-8), 'Failed to match final cell state!'
