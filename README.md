@@ -23,7 +23,7 @@ The goal of the challenge is to improve QoE for RTC system users as measured by 
 
 ## Challenge Requirements
 
-1. The policy model ($\pi$) can be a state-less or a stateful model that outputs the bandwidth estimate ($b_n$) in bits per second (bps). The input to a stateless model is the observation vector ($o_n$), hence, $\pi_\text{stateless}: o_n \rightarrow b_n$. On the other hand, the inputs to a stateful model are the observation vector ($o_n$), as well as hidden ($h_{n-1}$) and cell ($c_{n-1}$)  states which are representations learned by the model to capture the underlying structure and temporal dependencies in the sequence of observation vectors, hence, $\pi_\text{stateful}: o_n, h_{n-1}, c_{n-1} \rightarrow b_n$. Please refer to the [TF model class](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/tf_policy.py) or [PyTorch model class](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/torch_policy.py) in the repository which shows the required inputs and outputs.
+1. The policy model ($\pi$) can be a state-less or a stateful model that outputs the bandwidth estimate ($b_n$) in bits per second (bps). The input to a stateless model is the observation vector ($o_n$), hence, $\pi_\text{stateless}: o_n \rightarrow b_n$. On the other hand, the inputs to a stateful model are the observation vector ($o_n$), as well as hidden ($h_{n-1}$) and cell ($c_{n-1}$)  states which are representations learned by the model to capture the underlying structure and temporal dependencies in the sequence of observation vectors, hence, $\pi_\text{stateful}: o_n, h_{n-1}, c_{n-1} \rightarrow b_n$. Please refer to the [TF model class](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/tf_policy.py) or [PyTorch model class](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/torch_policy.py) in the repository which shows the required inputs and outputs. Any policy model that does not adhere to this input/output signature will be disqualified from the competition.
 
 2. Feature transformation and/or feature selection should be performed in a processing block within the model. For instance, the first layer ($l_0$) of the model can map the observation vector ($o_n$) to a desired agent state ($s_n$), $l_0: o_n → s_n$.
 
@@ -33,9 +33,11 @@ The goal of the challenge is to improve QoE for RTC system users as measured by 
 
 5. To reduce the hardware requirements when the policy model is used for inference at the client side of the video conferencing system, the model size must be smaller than 10 MB and inference latency should be no more than 5ms on an Intel Core i5 Quadcore clocked at 2.4 GHz using a single thread. 
 
-6. Participants can train the model using PyTorch or TensorFlow, and the model should be exported to ONNX. To ensure that organizers can run the model correctly, participants are required to share a small subset of their validation data along with their model outputs to be used for verification. We provide sample scripts to convert [PyTorch](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/torch_policy.py) and [TF models](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/tf_policy.py) in the repository. We have also released a [baseline stateless model (MLP)](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/onnx_models/) as a reference, with an [example script](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/run_baseline_model.py) to run this model.
+6. In offline RL it is typical to use an actor-critic architecture. As long as the inputs to the actor/policy model adhere to the aforementioned requirements, any set of features can be used as inputs for the critic.
 
-7. Participants should submit their training code to the Open-source Software and Datasets track of the conference to receive a reproducibility badge.
+7. Participants can train the model using PyTorch or TensorFlow, and the model should be exported to ONNX. To ensure that organizers can run the model correctly, participants are required to share a small subset of their validation data along with their model outputs to be used for verification. We provide sample scripts to convert [PyTorch](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/torch_policy.py) and [TF models](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/tf_policy.py) in the repository. We have also released a [baseline stateless model (MLP)](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/onnx_models/) as a reference, with an [example script](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/run_baseline_model.py) to run this model.
+
+8. Participants should submit their training code to the Open-source Software and Datasets track of the conference to receive a reproducibility badge.
 
 ## Dataset Description
 
@@ -53,7 +55,9 @@ This repository contains scripts required for 2nd Bandwidth Estimation Challenge
 
 4. [Bandwidth estimator model class in PyTorch and converison to onnx](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/torch_policy.py)
 
-5. [Code prerequisites](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/requirements.txt)
+5. [Offline RL baseline ONNX model](https://github.com/microsoft/RL4BandwidthEstimationChallenge/tree/main/onnx_models) and [inference script](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/run_baseline_model.py)
+
+6. [Code prerequisites](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/requirements.txt)
 
 ## Important Dates 
 
