@@ -9,7 +9,7 @@ The complete details about the challenge and participation rules can be found on
 
 * [October 20th, 2023]: [testbed dataset](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-testbed-dataset.sh) and [emulated dataset](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-emulated-dataset.sh) are released.
 * [November 24th, 2023]: [baseline](https://github.com/microsoft/RL4BandwidthEstimationChallenge/tree/main/onnx_models) offline RL model trained on the emulated dataset is released.
-* [November 24th, 2023]: the details and instructions for the preliminary evaluation opportunity are now posted on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/preliminary-evaluation/). 
+* [November 24th, 2023]: the details and instructions for the preliminary evaluation opportunity are posted on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/preliminary-evaluation/). 
 
 ## Grand Challenge Description
 
