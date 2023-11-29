@@ -25,12 +25,12 @@ if __name__ == "__main__":
         baseline_model_predictions = []
         hidden_state, cell_state = np.zeros((1, 1), dtype=np.float32), np.zeros((1, 1), dtype=np.float32)    
         for t in range(observations.shape[0]):
-            feed_dict = {'obs': observations[t:t+1,:],
+            feed_dict = {'obs': observations[t:t+1,:].reshape(1,1,-1),
                         'hidden_states': hidden_state,
                         'cell_states': cell_state
                         }
             bw_prediction, hidden_state, cell_state = ort_session.run(None, feed_dict)
-            baseline_model_predictions.append(bw_prediction[0,0])
+            baseline_model_predictions.append(bw_prediction[0,0,0])
         baseline_model_predictions = np.asarray(baseline_model_predictions, dtype=np.float32)
         fig = plt.figure(figsize=(8, 5))
         time_s = np.arange(0, observations.shape[0]*60,60)/1000
