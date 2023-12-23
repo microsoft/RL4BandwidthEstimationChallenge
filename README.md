@@ -75,11 +75,13 @@ This repository contains scripts required for 2nd Bandwidth Estimation Challenge
 
 * Dataset release: October 20th, 2023 
 
-* Model, code, and paper submission deadline: January 5th, 2024 
+* Registration on the hotcrp submission website: January 19th, 2024
 
-* Grand challenge paper acceptance: February 16th, 2024 
+* Model, code, and paper submission deadline: January 26th, 2024 
 
-* Camera ready paper due: March 1st, 2024 
+* Grand challenge paper acceptance: March 1st, 2024 
+
+* Camera ready paper due: March 8th, 2024 
 
 ## Citation
 
