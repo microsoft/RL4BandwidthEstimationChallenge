@@ -9,8 +9,11 @@ The complete details about the challenge and participation rules can be found on
 
 * [October 20th, 2023]: [testbed dataset](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-testbed-dataset.sh) and [emulated dataset](https://github.com/microsoft/RL4BandwidthEstimationChallenge/blob/main/download-emulated-dataset.sh) are released.
 * [November 24th, 2023]: [baseline](https://github.com/microsoft/RL4BandwidthEstimationChallenge/tree/main/onnx_models) offline RL model trained on the emulated dataset is released.
-* [November 24th, 2023]: the details and instructions for the preliminary evaluation opportunity are posted on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/preliminary-evaluation/). 
+* [November 24th, 2023]: the details and instructions for the first preliminary evaluation opportunity are posted on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/preliminary-evaluation/). 
 * [December 6th, 2023]: preliminary evaluation submission deadline extended to December 8th, 2023 11:59 PM AoE. torch_policy.py [bug fixed](https://github.com/microsoft/RL4BandwidthEstimationChallenge/commit/7258bda0e87d2f7f1ad8a8380806e45bb88c29d7).
+* [December 15th, 2023]: results of the first preliminary evaluation stage are posted on the challenge website [results page](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/results/).
+* [December 22nd, 2023]: the final submission deadline has been extended to January 26th, 2024. Please refer to the updated timeline for the challenge, which can be reviewed [here](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/timeline/).
+* [December 22nd, 2023]: the details and instructions for the second preliminary evaluation opportunity are announced on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/preliminary-evaluation/). 
 
 ## Grand Challenge Description
 
