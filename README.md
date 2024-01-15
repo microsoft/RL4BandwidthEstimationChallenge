@@ -12,8 +12,10 @@ The complete details about the challenge and participation rules can be found on
 * [November 24th, 2023]: the details and instructions for the first preliminary evaluation opportunity are posted on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/preliminary-evaluation/). 
 * [December 6th, 2023]: preliminary evaluation submission deadline extended to December 8th, 2023 11:59 PM AoE. torch_policy.py [bug fixed](https://github.com/microsoft/RL4BandwidthEstimationChallenge/commit/7258bda0e87d2f7f1ad8a8380806e45bb88c29d7).
 * [December 15th, 2023]: results of the first preliminary evaluation stage are posted on the challenge website [results page](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/results/).
-* [December 22nd, 2023]: the final submission deadline has been extended to January 26th, 2024. Please refer to the updated timeline for the challenge, which can be reviewed [here](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/timeline/).
+* [December 22nd, 2023]: the final submission deadline has been extended to January 26th, 2024. Please refer to the updated timeline for the challenge, which can be viewed [here](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/timeline/).
 * [December 22nd, 2023]: the details and instructions for the second preliminary evaluation opportunity are announced on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/preliminary-evaluation/). 
+* [January 12th, 2023]: results of the second preliminary evaluation stage are posted on the challenge website [results page](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/results/).
+* [January 15th, 2023]: paper registration deadline on the [hotcrp submission website](https://mmsys24ods.hotcrp.com/) and paper submission deadline have been extended to January 26th, 2024, and February 2nd, 2024, respectively. Please refer to the updated timeline for the challenge, which can be viewed [here](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/timeline/).
 
 ## Grand Challenge Description
 
@@ -75,9 +77,9 @@ This repository contains scripts required for 2nd Bandwidth Estimation Challenge
 
 * Dataset release: October 20th, 2023 
 
-* Registration on the hotcrp submission website: January 19th, 2024
+* Registration on the [hotcrp submission website](https://mmsys24ods.hotcrp.com/): January 26th, 2024
 
-* Model, code, and paper submission deadline: January 26th, 2024 
+* Model, code, and paper submission deadline: February 2nd, 2024 
 
 * Grand challenge paper acceptance: March 1st, 2024 
 
