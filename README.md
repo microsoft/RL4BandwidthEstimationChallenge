@@ -91,6 +91,7 @@ This repository contains scripts required for 2nd Bandwidth Estimation Challenge
 
 If you use this dataset in a publication please cite the following paper:
 
+```
 @misc{khairy2024acm,
       title={ACM MMSys 2024 Bandwidth Estimation in Real Time Communications Challenge}, 
       author={Sami Khairy and Gabriel Mittag and Scott Inglis and Vishak Gopal and Mehrsa Golestaneh and Ross Cutler and Francis Yan and Zhixiong Niu},
@@ -99,7 +100,7 @@ If you use this dataset in a publication please cite the following paper:
       archivePrefix={arXiv},
       primaryClass={cs.NI}
 }
-
+```
 
 ## Contributing
 
