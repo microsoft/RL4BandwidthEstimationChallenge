@@ -16,6 +16,8 @@ The complete details about the challenge and participation rules can be found on
 * [December 22nd, 2023]: the details and instructions for the second preliminary evaluation opportunity are announced on the [challenge website](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/preliminary-evaluation/). 
 * [January 12th, 2023]: results of the second preliminary evaluation stage are posted on the challenge website [results page](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/results/).
 * [January 15th, 2023]: paper registration deadline on the [hotcrp submission website](https://mmsys24ods.hotcrp.com/) and paper submission deadline have been extended to January 26th, 2024, and February 2nd, 2024, respectively. Please refer to the updated timeline for the challenge, which can be viewed [here](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/timeline/).
+* [March 8th, 2024]: paper decisions are available on the [hotcrp submission website](https://mmsys24ods.hotcrp.com/). Final evaluation results and grand challenge winners are announced on the challenge website [results page](https://www.microsoft.com/en-us/research/academic-program/bandwidth-estimation-challenge/results/). Submission deadline for the camera-ready version of accepted papers is on March 15th, 2024.
+* [March 10th, 2024]: grand challenge pre-print is available on [arXiv:2403.06324v1](https://arxiv.org/abs/2403.06324).
 
 ## Grand Challenge Description
 
@@ -86,6 +88,18 @@ This repository contains scripts required for 2nd Bandwidth Estimation Challenge
 * Camera ready paper due: March 8th, 2024 
 
 ## Citation
+
+If you use this dataset in a publication please cite the following paper:
+
+@misc{khairy2024acm,
+      title={ACM MMSys 2024 Bandwidth Estimation in Real Time Communications Challenge}, 
+      author={Sami Khairy and Gabriel Mittag and Scott Inglis and Vishak Gopal and Mehrsa Golestaneh and Ross Cutler and Francis Yan and Zhixiong Niu},
+      year={2024},
+      eprint={2403.06324},
+      archivePrefix={arXiv},
+      primaryClass={cs.NI}
+}
+
 
 ## Contributing
 
